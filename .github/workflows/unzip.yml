@@ -1,0 +1,20 @@
+name: Unzip File
+
+on: 
+  push:
+    branches:
+      - main  # Change this to any branch you want to trigger the action
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Unzip the file
+        run: unzip path/to/portfolio.7z.001.zip -d path/to/https://github.com/laibaaimran22/portfolio/tree/main
+
+      - name: List unzipped files
+        run: ls -R path/to/destination
